@@ -5,4 +5,10 @@
         <attr name="defocus_icon" format="reference"/>
         <attr name="focus_color" format="color"/>
     </declare-styleable>
+    
+    <declare-styleable name="ItemMainView">
+        <attr name="src" format="reference|color" />
+        <attr name="text" format="string" />
+        <attr name="badgeCount" format="integer" />
+    </declare-styleable>
 </resources>

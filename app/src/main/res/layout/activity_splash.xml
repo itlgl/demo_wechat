@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
         android:text="@string/language"
         android:textColor="#fff"
         android:textSize="15sp" />
@@ -30,13 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
         android:background="@drawable/selector_splash_login_bg"
         android:minWidth="120dp"
         android:text="@string/login"
         android:textColor="@color/selector_splash_login_textcolor"
-        android:textSize="18sp" />
+        android:textSize="17sp" />
 
     <Button
         android:id="@+id/register"
@@ -44,11 +44,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/selector_splash_register_bg"
         android:minWidth="120dp"
         android:text="@string/register"
         android:textColor="@color/selector_splash_register_textcolor"
-        android:textSize="18sp" />
+        android:textSize="17sp" />
 </RelativeLayout>
