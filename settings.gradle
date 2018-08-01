@@ -1,1 +1,1 @@
-include ':app', ':greendao_generator'
+include ':app', ':greendao_generator', ':tencent_im_sdk'
