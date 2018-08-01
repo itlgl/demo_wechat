@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.itlgl.demo.wechat.R;
+import com.itlgl.demo.wechat.module.login.LoginActivity;
 import com.itlgl.demo.wechat.module.main.MainActivity;
+import com.itlgl.demo.wechat.module.register.RegisterActivity;
 import com.itlgl.demo.wechat.utils.BarUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -64,13 +66,13 @@ public class SplashActivity extends RxAppCompatActivity {
     @SuppressWarnings("unused")
     @OnClick(R.id.login)
     void loginClick(View v) {
-        Toast.makeText(this, "login", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     @SuppressWarnings("unused")
     @OnClick(R.id.register)
     void registerClick(View v) {
-        Toast.makeText(this, "register", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     // test
