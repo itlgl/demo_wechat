@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -29,7 +30,11 @@ public class ItemMainView extends RelativeLayout {
     ImageView imageView;
     @BindView(R.id.text)
     TextView textView;
+    @BindView(R.id.badge_bind_view)
+    TextView badgeBindView;
     private Badge badge;
+    @BindView(R.id.line)
+    View line;
 
     public ItemMainView(Context context) {
         this(context, null);
@@ -45,19 +50,15 @@ public class ItemMainView extends RelativeLayout {
     }
 
     private void initView(Context context, AttributeSet attrs) {
-//        LayoutInflater inflater = LayoutInflater.from(getContext());
-//        inflater.inflate(R.layout.item_main, this, true);
         inflate(getContext(), R.layout.item_main, this);
         ButterKnife.bind(this);
-
-        Log.i("test", "ItemMainView imageView=" + imageView);
-        Log.i("test", "ItemMainView textView=" + textView);
-        Log.i("test", "ItemMainView badge=" + badge);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ItemMainView);
         final CharSequence text = ta.getText(R.styleable.ItemMainView_text);
         final Drawable d = ta.getDrawable(R.styleable.ItemMainView_src);
-        final int badgeCount = ta.getInteger(R.styleable.ItemMainView_badgeCount, 0);
+        final String badgeString = ta.getString(R.styleable.ItemMainView_badge);
+        final boolean showSplitLine = ta.getBoolean(R.styleable.ItemMainView_splitLine, false);
+        final int imageVisibility = ta.getInt(R.styleable.ItemMainView_imageVisibility, View.VISIBLE);
         ta.recycle();
 
         if(text != null) {
@@ -67,10 +68,18 @@ public class ItemMainView extends RelativeLayout {
             imageView.setImageDrawable(d);
         }
 
-        badge = new QBadgeView(getContext()).bindTarget(textView);
-        badge.setBadgeNumber(badgeCount);
+        badge = new QBadgeView(getContext()).bindTarget(badgeBindView);
+        badge.setBadgeText(badgeString);
         badge.setBadgeBackgroundColor(Color.RED);
-        badge.setBadgeGravity(Gravity.CENTER | Gravity.END);
+        badge.setBadgeGravity(Gravity.CENTER);
+
+        if(showSplitLine) {
+            showSplitLine();
+        } else {
+            hideSplitLine();
+        }
+
+        imageView.setVisibility(imageVisibility);
     }
 
     public ImageView getImageView() {
@@ -83,5 +92,13 @@ public class ItemMainView extends RelativeLayout {
 
     public Badge getBadge() {
         return badge;
+    }
+
+    public void showSplitLine() {
+        line.setVisibility(View.VISIBLE);
+    }
+
+    public void hideSplitLine() {
+        line.setVisibility(View.GONE);
     }
 }

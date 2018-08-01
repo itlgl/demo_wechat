@@ -1,26 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ebebeb"
     tools:context=".module.main.fragment.WechatFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:layout_centerInParent="true"/>
-
-    <com.itlgl.demo.wechat.module.common.view.ItemMainView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:src="@drawable/ic_wallet_blue1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        app:text="test">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </com.itlgl.demo.wechat.module.common.view.ItemMainView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_item_main_background"
+            android:clickable="true">
 
-</RelativeLayout>
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_default_avatar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/avatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lgl"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wechat_id"
+                        android:textColor="#a9a9a9"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/user_wechat_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="itlglcom"
+                        android:textColor="#a9a9a9"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/user_qrcode"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:clickable="true"
+                android:src="@drawable/selector_user_qr_src" />
+        </RelativeLayout>
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_wallet"
+            app:badge="new"
+            app:text="@string/wallet" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:splitLine="true"
+            app:src="@drawable/ic_favorites"
+            app:text="@string/favorites" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/my_posts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:splitLine="true"
+            app:src="@drawable/ic_my_posts"
+            app:text="@string/my_posts" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/sticker_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:src="@drawable/ic_sticker_gallery"
+            app:text="@string/sticker_gallery" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_settings"
+            app:text="@string/setting" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="@dimen/menu_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/menu_create_group_chat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_create_group_chat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_create_group_chat"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_add_friends"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_add_friends" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_add_friends"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_scan_qr_code"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_scan_qr_code" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_scan_qr_code"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_feedback" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help_feedback"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

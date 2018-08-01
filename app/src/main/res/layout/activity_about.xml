@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_menu_background"
+            android:clickable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back_01" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_wechat"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_wechat_logo_big" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="#999999"
+        android:textSize="16sp" />
+
+    <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        android:id="@+id/about_project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:imageVisibility="gone"
+        app:splitLine="true"
+        app:text="@string/about_project" />
+
+    <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        android:id="@+id/about_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:imageVisibility="gone"
+        app:text="@string/about_me" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="15dp"
+        android:text="@string/licence"
+        android:textColor="#999999"
+        android:textSize="15sp" />
+</LinearLayout>

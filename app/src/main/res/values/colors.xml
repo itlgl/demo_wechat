@@ -5,4 +5,11 @@
     <color name="colorAccent">#179E16</color>
     <color name="item_main_background_normal">#fff</color>
     <color name="item_main_background_pressed">#d9d9d9</color>
+    <color name="menu_icon_pressed">#262626</color>
+    <color name="transparent">#00000000</color>
+    <color name="menu_pop_background_normal">#393a3f</color>
+    <!--<color name="menu_pop_background_normal">#303135</color>-->
+    <color name="menu_pop_background_pressed">#313136</color>
+
+    <color name="wechat_dialog_button_pressed">#F0F0F0</color>
 </resources>

@@ -9,6 +9,15 @@
     <declare-styleable name="ItemMainView">
         <attr name="src" format="reference|color" />
         <attr name="text" format="string" />
-        <attr name="badgeCount" format="integer" />
+        <attr name="badge" format="string" />
+        <attr name="splitLine" format="boolean" />
+        <attr name="imageVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Not displayed, but taken into account during layout (space is left for it). -->
+            <enum name="invisible" value="4" />
+            <!-- Completely hidden, as if the view had not been added. -->
+            <enum name="gone" value="8" />
+        </attr>
     </declare-styleable>
 </resources>

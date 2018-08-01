@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ebebeb"
     tools:context=".module.main.fragment.WechatFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/btn_moments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_moments"
+            app:text="@string/moments" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_scan_qr_code"
+            app:splitLine="true"
+            app:text="@string/scan_qr_code" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/btn_shake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:src="@drawable/ic_shake"
+            app:text="@string/shake" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/btn_people_nearby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_people_nearby"
+            app:text="@string/people_nearby" />
+
+        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            android:id="@+id/btn_games"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:src="@drawable/ic_games"
+            app:text="@string/games" />
+    </LinearLayout>
+</ScrollView>

@@ -8,6 +8,41 @@
     <string name="home_tab_discover">发现</string>
     <string name="home_tab_me">我</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- 发现标签页的string -->
+    <string name="moments">朋友圈</string>
+    <string name="scan_qr_code">扫一扫</string>
+    <string name="shake">摇一摇</string>
+    <string name="top_stories">看一看</string>
+    <string name="search">搜一搜</string>
+    <string name="people_nearby">附近的人</string>
+    <string name="games">游戏</string>
+
+    <!-- 我标签页的string -->
+    <string name="wechat_id">微信号：</string>
+    <string name="wallet">钱包</string>
+    <string name="favorites">收藏</string>
+    <string name="my_posts">相册</string>
+    <string name="sticker_gallery">表情</string>
+    <string name="setting">设置</string>
+
+    <!-- menu -->
+    <string name="menu_create_group_chat">发起群聊</string>
+    <string name="menu_scan_qr_code">扫一扫</string>
+    <string name="menu_add_friends">添加朋友</string>
+    <string name="help_feedback">帮助与反馈</string>
+    <string name="menu_search_tip">搜索</string>
+
+    <!-- setting -->
+    <string name="about_wechat">关于微信demo</string>
+    <string name="account_and_security">账号与安全</string>
+    <string name="switch_account">切换账号</string>
+    <string name="quit">退出</string>
+
+    <string name="about_project">项目介绍</string>
+    <string name="about_me">关于我</string>
+    <string name="project_info">这是一个仿微信6.6.7版本的demo项目，主要用于自我学习和交流，请不要将项目用于商业用途！\n\n项目Github地址：<a href="https://github.com/itlgl/demo_wechat">github.com/itlgl/demo_wechat</a></string>
+    <string name="me_info">一个Android开发者，我的Github：<a href="https://github.com/itlgl">itlgl</a></string>
+    <string name="licence">这是一个仿微信的demo项目\n仅供学习交流\n不得用于商业用途</string>
+
+    <string name="wechat_dialog_default_ok">我知道了</string>
 </resources>

@@ -24,21 +24,29 @@
 
         <ImageView
             android:id="@+id/menu_search"
-            android:layout_width="@dimen/title_menu_height"
-            android:layout_height="@dimen/title_menu_height"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/menu_more"
-            android:src="@drawable/home_chats" />
+            android:background="@drawable/selector_menu_background"
+            android:clickable="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_search" />
 
         <ImageView
             android:id="@+id/menu_more"
-            android:layout_width="@dimen/title_menu_height"
-            android:layout_height="@dimen/title_menu_height"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/home_chats" />
+            android:background="@drawable/selector_menu_background"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_more" />
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager
@@ -53,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_above="@+id/radiogroup"
-        android:background="#555" />
+        android:background="#d6d6d6" />
 
     <com.itlgl.demo.wechat.module.main.view.WeChatRadioGroup
         android:id="@+id/radiogroup"
@@ -69,10 +77,10 @@
             android:layout_weight="1"
             android:checked="true"
             android:gravity="center"
-            android:paddingTop="3dp"
+            android:paddingTop="6dp"
             android:text="@string/home_tab_wechat"
-            android:textColor="#555"
-            android:textSize="13sp"
+            android:textColor="#a2a2a2"
+            android:textSize="12sp"
             app:defocus_icon="@drawable/home_chats"
             app:focus_color="#50ba26"
             app:focus_icon="@drawable/home_chats_green" />
@@ -83,10 +91,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:paddingTop="3dp"
+            android:paddingTop="6dp"
             android:text="@string/home_tab_contacts"
-            android:textColor="#555"
-            android:textSize="13sp"
+            android:textColor="#a2a2a2"
+            android:textSize="12sp"
             app:defocus_icon="@drawable/home_contacts"
             app:focus_color="#50ba26"
             app:focus_icon="@drawable/home_contacts_green" />
@@ -97,10 +105,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:paddingTop="3dp"
+            android:paddingTop="6dp"
             android:text="@string/home_tab_discover"
-            android:textColor="#555"
-            android:textSize="13sp"
+            android:textColor="#a2a2a2"
+            android:textSize="12sp"
             app:defocus_icon="@drawable/home_discover"
             app:focus_color="#50ba26"
             app:focus_icon="@drawable/home_discover_green" />
@@ -111,12 +119,137 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:paddingTop="3dp"
+            android:paddingTop="6dp"
             android:text="@string/home_tab_me"
-            android:textColor="#555"
-            android:textSize="13sp"
+            android:textColor="#a2a2a2"
+            android:textSize="12sp"
             app:defocus_icon="@drawable/home_about_me"
             app:focus_color="#50ba26"
             app:focus_icon="@drawable/home_about_me_green" />
     </com.itlgl.demo.wechat.module.main.view.WeChatRadioGroup>
+
+    <!--
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="@dimen/menu_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/menu_background"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/menu_create_group_chat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_create_group_chat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_create_group_chat"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_add_friends"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_add_friends" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_add_friends"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_scan_qr_code"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_scan_qr_code" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_scan_qr_code"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#192123" />
+
+        <LinearLayout
+            android:id="@+id/menu_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_menu_item_background"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/menu_feedback" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_feedback"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    -->
 </RelativeLayout>
