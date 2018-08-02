@@ -42,6 +42,23 @@ public class WechatProgressDialog extends Dialog {
         return show(context, message, true, null);
     }
 
+    public static WechatProgressDialog show(Context context, int messageId) {
+        return show(context, messageId, true, null);
+    }
+
+    public static WechatProgressDialog show(Context context, CharSequence message, boolean cancelable) {
+        return show(context, message, cancelable, null);
+    }
+
+    public static WechatProgressDialog show(Context context, int messageId, boolean cancelable) {
+        return show(context, messageId, cancelable, null);
+    }
+
+    public static WechatProgressDialog show(Context context, int messageId,
+            boolean cancelable, OnCancelListener cancelListener) {
+        return show(context, context.getString(messageId), cancelable, cancelListener);
+    }
+
     public static WechatProgressDialog show(Context context, CharSequence message,
             boolean cancelable, OnCancelListener cancelListener) {
         WechatProgressDialog progress = new WechatProgressDialog(context);

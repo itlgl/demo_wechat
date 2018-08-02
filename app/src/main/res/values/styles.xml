@@ -27,4 +27,12 @@
         <item name="android:windowBackground">@drawable/wechat_progress_dialog_background</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <!-- wechat 绿色样式button，继承Borderless来去掉button的阴影效果 -->
+    <style name="WechatButtonBlue" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/wechat_blue_button_background</item>
+        <item name="android:textColor">@color/wechat_blue_button_text_color</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:minHeight">48dip</item>
+    </style>
 </resources>

@@ -12,4 +12,11 @@
     <color name="menu_pop_background_pressed">#313136</color>
 
     <color name="wechat_dialog_button_pressed">#F0F0F0</color>
+    <color name="wechat_commom_pressed_gray">#ddd9d9d9</color>
+    <color name="wechat_green_button_disable_background">#9BD69B</color>
+    <color name="wechat_green_button_normal_background">#1AAD19</color>
+    <color name="wechat_green_button_pressed_background">#179B16</color>
+    <color name="wechat_green_button_disable_text_color">#B9E2B9</color>
+    <color name="wechat_green_button_pressed_text_color">#A2D7A2</color>
+    <color name="wechat_green_button_normal_text_color">#fff</color>
 </resources>

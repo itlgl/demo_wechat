@@ -45,4 +45,18 @@
     <string name="licence">这是一个仿微信的demo项目\n仅供学习交流\n不得用于商业用途</string>
 
     <string name="wechat_dialog_default_ok">我知道了</string>
+
+    <!-- register -->
+    <string name="register_by_phone">手机号注册</string>
+    <string name="nickname">昵称</string>
+    <string name="nickname_hint">例如：陈晨</string>
+    <string name="phone_number">手机号</string>
+    <string name="phone_number_hint">请填写手机号</string>
+    <string name="password">密码</string>
+    <string name="password_hint">填写密码</string>
+    <string name="country_or_region">国家/地区</string>
+    <string name="register_licence_tip">点击上面的“注册”按钮，即表示你同意<a href="#">《腾讯微信软件许可及服务协议》</a>和<a href="#">《微信隐私保护指引》</a></string>
+    <string name="register_loading_text">正在注册，请稍候...</string>
+    <string name="register_error">注册失败</string>
+    <string name="ok">确定</string>
 </resources>
