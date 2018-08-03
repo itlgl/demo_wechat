@@ -1,28 +1,39 @@
 package com.itlgl.demo.wechat.module.register.bean;
 
-import android.net.Uri;
+import android.text.TextUtils;
 
-public class RegisterBean {
+import java.io.File;
+import java.io.Serializable;
+
+public class RegisterBean implements Serializable {
     public String nickname;
-    public Uri avatar;
-    public String areaCode;
+    public File avatarFilePath;
+    /**
+     * ex:86
+     */
+    public String regionCode;
     public String phoneNumber;
     public String password;
 
     public RegisterBean() {}
+
+    public boolean isAllInputsFilled() {
+        return !TextUtils.isEmpty(nickname) && !TextUtils.isEmpty(regionCode)
+                && !TextUtils.isEmpty(phoneNumber) && !TextUtils.isEmpty(password);
+    }
 
     public RegisterBean setNickname(String nickname) {
         this.nickname = nickname;
         return this;
     }
 
-    public RegisterBean setAvatar(Uri avatar) {
-        this.avatar = avatar;
+    public RegisterBean setAvatarFilePath(File avatarFilePath) {
+        this.avatarFilePath = avatarFilePath;
         return this;
     }
 
-    public RegisterBean setAreaCode(String areaCode) {
-        this.areaCode = areaCode;
+    public RegisterBean setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
         return this;
     }
 

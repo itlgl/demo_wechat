@@ -20,6 +20,10 @@ import android.widget.TextView;
 import com.itlgl.demo.wechat.R;
 
 public class WechatDialog extends Dialog {
+    public static final int COLOR_GRAY = Color.parseColor("#6E6E6E");
+    public static final int COLOR_BLUE = Color.parseColor("#1AAD19");
+    public static final int COLOR_RED = Color.parseColor("#FF3E3E");
+
     public WechatDialog(@NonNull Context context) {
         super(context, R.style.WechatDialogStyle);
     }
@@ -37,10 +41,6 @@ public class WechatDialog extends Dialog {
         private boolean cancelable = true;
         private int positiveTextColor;
         private int negativeTextColor;
-
-        static final int COLOR_GRAY = Color.parseColor("#6E6E6E");
-        static final int COLOR_BLUE = Color.parseColor("#1AAD19");
-        static final int COLOR_RED = Color.parseColor("#FF3E3E");
 
         public Builder(Context context) {
             this.context = context;
