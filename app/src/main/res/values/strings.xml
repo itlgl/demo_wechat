@@ -75,4 +75,9 @@
     <string name="need_verify_sms_code_tip">输入短信验证码</string>
     <string name="input_sms_code_tip">输入手机号：%s对应的短信验证码</string>
     <string name="complete_register">完成注册</string>
+
+    <!-- login -->
+    <string name="next_step">下一步</string>
+    <string name="login_by_phone">手机号登录</string>
+    <string name="select_county_and_region_code">选择国家和地区代码</string>
 </resources>

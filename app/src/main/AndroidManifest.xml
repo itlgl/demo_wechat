@@ -31,11 +31,11 @@
         <service
             android:name="com.tencent.qalsdk.service.QalService"
             android:exported="true"
-            android:process=":QALSERVICE"></service>
+            android:process=":QALSERVICE" />
         <service
             android:name="com.tencent.qalsdk.service.QalAssistService"
             android:exported="false"
-            android:process=":QALSERVICE"></service>
+            android:process=":QALSERVICE" />
 
         <!-- 【必须】 离线消息广播接收器 -->
         <receiver
@@ -78,9 +78,10 @@
         <activity android:name=".module.main.MainActivity" />
         <activity android:name=".module.setting.SettingActivity" />
         <activity android:name=".module.common.AboutActivity" />
-        <activity android:name=".module.login.LoginActivity" />
-        <activity android:name=".module.register.RegisterActivity" />
-        <activity android:name=".module.register.RegisterSmsVerifyActivity"></activity>
+        <activity android:name=".module.login.PhonePwdLoginActivity" />
+        <activity android:name=".module.register.PhonePwdRegisterActivity" />
+        <activity android:name=".module.register.RegisterSmsVerifyActivity" />
+        <activity android:name=".module.common.SelectRegionCodeActivity"></activity>
     </application>
 
 </manifest>

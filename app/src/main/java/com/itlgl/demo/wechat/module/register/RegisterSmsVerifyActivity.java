@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.itlgl.demo.wechat.R;
 import com.itlgl.demo.wechat.module.common.view.WechatDialog;
 import com.itlgl.demo.wechat.module.common.view.WechatProgressDialog;
-import com.itlgl.demo.wechat.module.login.LoginActivity;
+import com.itlgl.demo.wechat.module.login.PhonePwdLoginActivity;
 import com.itlgl.demo.wechat.module.register.bean.RegisterBean;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -146,7 +146,7 @@ public class RegisterSmsVerifyActivity extends RxAppCompatActivity {
                 .setPositiveButton(R.string.wechat_dialog_default_ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(context, LoginActivity.class));
+                        startActivity(new Intent(context, PhonePwdLoginActivity.class));
                         setResult(RESULT_OK);
                         finish();
                     }

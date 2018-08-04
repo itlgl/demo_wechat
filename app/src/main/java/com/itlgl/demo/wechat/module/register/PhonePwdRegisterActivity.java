@@ -5,40 +5,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.itlgl.demo.wechat.R;
+import com.itlgl.demo.wechat.bean.RegionCode;
+import com.itlgl.demo.wechat.module.common.SelectRegionCodeActivity;
 import com.itlgl.demo.wechat.module.common.view.WechatDialog;
 import com.itlgl.demo.wechat.module.common.view.WechatProgressDialog;
 import com.itlgl.demo.wechat.module.register.bean.RegisterBean;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
-import tencent.tls.platform.TLSAccountHelper;
-import tencent.tls.platform.TLSErrInfo;
-import tencent.tls.platform.TLSPwdRegListener;
-import tencent.tls.platform.TLSUserInfo;
 
-public class RegisterActivity extends AppCompatActivity {
+public class PhonePwdRegisterActivity extends AppCompatActivity {
 
-    static final int REQUEST_CODE_SMS_VERIFY = 123;
+    private static final int REQUEST_CODE_SMS_VERIFY = 1;
+    private static final int REQUEST_CODE_SELECT_REGION_CODE = 2;
 
     @BindView(R.id.nickname)
     EditText etNickname;
@@ -70,13 +58,12 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_phone_pwd_register);
         ButterKnife.bind(this);
         initView();
     }
 
     private void initView() {
-        // TODO 区域码代码和配置
         region = getString(R.string.default_region);
         regionCode = getString(R.string.default_region_code);
         tvRegionCode.setText(String.format("%s (+%s)", region, regionCode));
@@ -231,9 +218,7 @@ public class RegisterActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     @OnClick(R.id.layout_region_code)
     void areaCodeClick(View v) {
-        new WechatDialog.Builder(this)
-                .setMessage("正在开发中...")
-                .show();
+        startActivityForResult(new Intent(this, SelectRegionCodeActivity.class), REQUEST_CODE_SELECT_REGION_CODE);
     }
 
     @SuppressWarnings("unused")
@@ -291,6 +276,18 @@ public class RegisterActivity extends AppCompatActivity {
                 if(resultCode == RESULT_OK) {
                     // 如果返回RESULT_OK，表示注册成功了，这时就要关闭注册页面
                     finish();
+                }
+                break;
+            case REQUEST_CODE_SELECT_REGION_CODE:
+                if(resultCode == RESULT_OK) {
+                    try {
+                        RegionCode rc = (RegionCode) data.getSerializableExtra(SelectRegionCodeActivity.EXTRA_REGION_CODE);
+                        region = rc.getName();
+                        regionCode = String.valueOf(rc.getCode());
+                        tvRegionCode.setText(String.format("%s (+%s)", region, regionCode));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
                 break;
         }

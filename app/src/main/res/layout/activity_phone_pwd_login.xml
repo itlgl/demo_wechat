@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ebebeb"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".module.login.PhonePwdLoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,53 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/register_by_phone"
+                android:text="@string/login_by_phone"
                 android:textColor="#000"
                 android:textSize="25sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toLeftOf="@+id/avatar"
-                    android:addStatesFromChildren="true"
-                    android:background="@drawable/wechat_bottom_line_background">
-
-                    <TextView
-                        android:id="@+id/hint_nickname"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/nickname"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/nickname"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/hint_nickname"
-                        android:background="@null"
-                        android:ellipsize="end"
-                        android:gravity="center_vertical"
-                        android:hint="@string/nickname_hint"
-                        android:lines="1"
-                        android:textSize="16sp" />
-                </RelativeLayout>
-
-                <ImageButton
-                    android:id="@+id/avatar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/photo_background" />
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/layout_region_code"
@@ -155,61 +112,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
-
-                <RelativeLayout
-                    android:id="@+id/layout_sms_verify_code"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/get_sms_verify_code"
-                    android:addStatesFromChildren="true"
-                    android:background="@drawable/wechat_bottom_line_background">
-
-                    <TextView
-                        android:id="@+id/hint_sms_verify_code"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/sms_verify_code"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/sms_verify_code"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/hint_sms_verify_code"
-                        android:background="@null"
-                        android:ellipsize="end"
-                        android:gravity="center_vertical"
-                        android:hint="@string/sms_verify_code_hint"
-                        android:inputType="number"
-                        android:lines="1"
-                        android:textSize="16sp" />
-                </RelativeLayout>
-
-                <Button
-                    android:id="@+id/get_sms_verify_code"
-                    style="@style/WechatButtonBlue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:enabled="false"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="@string/get_sms_verify_code" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@+id/get_sms_verify_code"
                 android:addStatesFromChildren="true"
                 android:background="@drawable/wechat_bottom_line_background">
 
@@ -247,21 +151,14 @@
             </RelativeLayout>
 
             <Button
-                android:id="@+id/register"
+                android:id="@+id/login"
                 style="@style/WechatButtonBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:enabled="false"
-                android:text="@string/register" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/register_licence_tip"
-                android:textColor="#969696"
-                android:textSize="12sp" />
+                android:text="@string/login" />
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -2,14 +2,15 @@ package com.itlgl.demo.wechat.module.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.itlgl.demo.wechat.R;
-import com.itlgl.demo.wechat.module.login.LoginActivity;
+import com.itlgl.demo.wechat.module.login.PhonePwdLoginActivity;
 import com.itlgl.demo.wechat.module.main.MainActivity;
-import com.itlgl.demo.wechat.module.register.RegisterActivity;
+import com.itlgl.demo.wechat.module.register.PhonePwdRegisterActivity;
 import com.itlgl.demo.wechat.utils.BarUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -66,13 +67,13 @@ public class SplashActivity extends RxAppCompatActivity {
     @SuppressWarnings("unused")
     @OnClick(R.id.login)
     void loginClick(View v) {
-        startActivity(new Intent(this, LoginActivity.class));
+        startActivity(new Intent(this, PhonePwdLoginActivity.class));
     }
 
     @SuppressWarnings("unused")
     @OnClick(R.id.register)
     void registerClick(View v) {
-        startActivity(new Intent(this, RegisterActivity.class));
+        startActivity(new Intent(this, PhonePwdRegisterActivity.class));
     }
 
     // test
