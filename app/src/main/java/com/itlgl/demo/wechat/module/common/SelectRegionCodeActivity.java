@@ -45,6 +45,7 @@ public class SelectRegionCodeActivity extends AppCompatActivity {
         // FIXME 现在只是完成测试的功能，以后这里要改成微信一样的风格
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         regionCodeDisplayList = loadRegionCodeData();
+
         regionAdapter = new RegionAdapter(this, regionCodeDisplayList);
         recyclerView.setAdapter(regionAdapter);
         regionAdapter.setOnItemClickListener(new OnItemClickListener() {
@@ -62,17 +63,16 @@ public class SelectRegionCodeActivity extends AppCompatActivity {
         List<RegionCodeDisplay> result = new ArrayList<>();
         List<RegionCode> regionCodeList = new ArrayList<>();
         try {
-            String regionData = getString(R.string.region_list);
-            String[] regionArray = regionData.split(",");
+            String[] regionArray = getResources().getStringArray(R.array.region_array);
             for (String regionStr : regionArray) {
                 String[] regionSingleArray = regionStr.split(":");
                 if(regionSingleArray.length < 3) {
                     continue;
                 }
 
-                int code = Integer.parseInt(regionSingleArray[0].trim());
+                int code = Integer.parseInt(regionSingleArray[2].trim());
                 String name = regionSingleArray[1].trim();
-                String sortName = regionSingleArray[2].trim();
+                String sortName = regionSingleArray[0].trim();
 
                 regionCodeList.add(new RegionCode(name, sortName, code));
             }
