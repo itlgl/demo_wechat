@@ -43,7 +43,6 @@ public class SelectRegionCodeActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        // FIXME 现在只是完成测试的功能，以后这里要改成微信一样的风格
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         regionCodeDisplayList = loadRegionCodeData();
 

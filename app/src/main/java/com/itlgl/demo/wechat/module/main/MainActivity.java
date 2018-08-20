@@ -1,26 +1,18 @@
 package com.itlgl.demo.wechat.module.main;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.PopupWindowCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -30,7 +22,6 @@ import com.itlgl.demo.wechat.module.main.fragment.DiscoverFragment;
 import com.itlgl.demo.wechat.module.main.fragment.MeFragment;
 import com.itlgl.demo.wechat.module.main.fragment.WechatFragment;
 import com.itlgl.demo.wechat.module.main.view.WeChatRadioGroup;
-import com.itlgl.demo.wechat.utils.DipUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showMenu() {
-        if(menuPopupWindow == null) {
+        if (menuPopupWindow == null) {
             View menuView = LayoutInflater.from(this).inflate(R.layout.view_menu, null);
             ButterKnife.bind(menuListener, menuView);
             menuPopupWindow = new PopupWindow(this);

@@ -140,18 +140,8 @@ public class RegisterSmsVerifyActivity extends RxAppCompatActivity {
     }
     // 注册成功了
     void onRegisterSuccess() {
-        // TODO 注册成功以后，跳转到登录界面，然后登录界面直接登录，然后删掉这个dialog
-        new WechatDialog.Builder(context)
-                .setMessage("注册成功\n(等待登录功能完成)")
-                .setPositiveButton(R.string.wechat_dialog_default_ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(context, PhonePwdLoginActivity.class));
-                        setResult(RESULT_OK);
-                        finish();
-                    }
-                })
-                .show();
+        startActivity(new Intent(this, PhonePwdLoginActivity.class));
+        finish();
     }
 
     private TLSPwdRegListener tlsPwdRegListener = new TLSPwdRegListener() {
