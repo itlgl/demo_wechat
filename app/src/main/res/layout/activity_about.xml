@@ -45,7 +45,7 @@
         android:textColor="#999999"
         android:textSize="16sp" />
 
-    <com.itlgl.demo.wechat.module.common.view.ItemMainView
+    <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
         android:id="@+id/about_project"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         app:splitLine="true"
         app:text="@string/about_project" />
 
-    <com.itlgl.demo.wechat.module.common.view.ItemMainView
+    <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
         android:id="@+id/about_me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

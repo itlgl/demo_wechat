@@ -40,14 +40,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:imageVisibility="gone"
                 app:text="@string/account_and_security" />
 
-            <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
                 android:id="@+id/about_wechat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,13 +56,13 @@
                 app:splitLine="true"
                 app:text="@string/about_wechat" />
 
-            <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:imageVisibility="gone"
                 app:text="@string/help_feedback" />
 
-            <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -70,7 +70,7 @@
                 app:splitLine="true"
                 app:text="@string/switch_account" />
 
-            <com.itlgl.demo.wechat.module.common.view.ItemMainView
+            <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:imageVisibility="gone"

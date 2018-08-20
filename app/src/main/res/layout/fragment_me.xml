@@ -77,7 +77,7 @@
                 android:src="@drawable/selector_user_qr_src" />
         </RelativeLayout>
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/wallet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             app:badge="new"
             app:text="@string/wallet" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
             app:src="@drawable/ic_favorites"
             app:text="@string/favorites" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/my_posts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,14 +103,14 @@
             app:src="@drawable/ic_my_posts"
             app:text="@string/my_posts" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/sticker_gallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:src="@drawable/ic_sticker_gallery"
             app:text="@string/sticker_gallery" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

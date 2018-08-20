@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/btn_moments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             app:src="@drawable/ic_moments"
             app:text="@string/moments" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/btn_scan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,14 +29,14 @@
             app:splitLine="true"
             app:text="@string/scan_qr_code" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/btn_shake"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:src="@drawable/ic_shake"
             app:text="@string/shake" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/btn_people_nearby"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             app:src="@drawable/ic_people_nearby"
             app:text="@string/people_nearby" />
 
-        <com.itlgl.demo.wechat.module.common.view.ItemMainView
+        <com.itlgl.demo.wechat.module.common.view.ItemImageTextView
             android:id="@+id/btn_games"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

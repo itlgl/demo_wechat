@@ -6,9 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -22,10 +20,10 @@ import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
 
 /**
- * 对应R.layout.item_main布局的view类，只提供最基本的ImageView的src设置，TextView的text设置和Badge的数量设置
+ * 对应R.layout.item_image_text布局的view类，只提供最基本的ImageView的src设置，TextView的text设置和Badge的数量设置
  * 其余设置可以通过获取这三个控件再进行单独的设置
  */
-public class ItemMainView extends RelativeLayout {
+public class ItemImageTextView extends RelativeLayout {
     @BindView(R.id.image)
     ImageView imageView;
     @BindView(R.id.text)
@@ -36,29 +34,29 @@ public class ItemMainView extends RelativeLayout {
     @BindView(R.id.line)
     View line;
 
-    public ItemMainView(Context context) {
+    public ItemImageTextView(Context context) {
         this(context, null);
     }
 
-    public ItemMainView(Context context, @Nullable AttributeSet attrs) {
+    public ItemImageTextView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ItemMainView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ItemImageTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(context, attrs);
     }
 
     private void initView(Context context, AttributeSet attrs) {
-        inflate(getContext(), R.layout.item_main, this);
+        inflate(getContext(), R.layout.item_image_text_view, this);
         ButterKnife.bind(this);
 
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ItemMainView);
-        final CharSequence text = ta.getText(R.styleable.ItemMainView_text);
-        final Drawable d = ta.getDrawable(R.styleable.ItemMainView_src);
-        final String badgeString = ta.getString(R.styleable.ItemMainView_badge);
-        final boolean showSplitLine = ta.getBoolean(R.styleable.ItemMainView_splitLine, false);
-        final int imageVisibility = ta.getInt(R.styleable.ItemMainView_imageVisibility, View.VISIBLE);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ItemImageTextView);
+        final CharSequence text = ta.getText(R.styleable.ItemImageTextView_text);
+        final Drawable d = ta.getDrawable(R.styleable.ItemImageTextView_src);
+        final String badgeString = ta.getString(R.styleable.ItemImageTextView_badge);
+        final boolean showSplitLine = ta.getBoolean(R.styleable.ItemImageTextView_splitLine, false);
+        final int imageVisibility = ta.getInt(R.styleable.ItemImageTextView_imageVisibility, View.VISIBLE);
         ta.recycle();
 
         if(text != null) {

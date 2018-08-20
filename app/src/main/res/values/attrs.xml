@@ -5,11 +5,16 @@
         <attr name="defocus_icon" format="reference"/>
         <attr name="focus_color" format="color"/>
     </declare-styleable>
-    
-    <declare-styleable name="ItemMainView">
-        <attr name="src" format="reference|color" />
+
+    <!-- Error:Error: Found item Attr/duration more than one time -->
+    <!-- https://blog.csdn.net/u010859484/article/details/71170314 -->
+    <attr name="src" format="reference|color" />
+    <attr name="badge" format="string" />
+
+    <declare-styleable name="ItemImageTextView">
+        <attr name="src" />
         <attr name="text" format="string" />
-        <attr name="badge" format="string" />
+        <attr name="badge" />
         <attr name="splitLine" format="boolean" />
         <attr name="imageVisibility">
             <!-- Visible on screen; the default value. -->
@@ -19,5 +24,12 @@
             <!-- Completely hidden, as if the view had not been added. -->
             <enum name="gone" value="8" />
         </attr>
+    </declare-styleable>
+    <declare-styleable name="ItemRecentlyChatView">
+        <attr name="src" />
+        <attr name="title" format="string" />
+        <attr name="message" format="string" />
+        <attr name="datetime" format="string" />
+        <attr name="badge" />
     </declare-styleable>
 </resources>
