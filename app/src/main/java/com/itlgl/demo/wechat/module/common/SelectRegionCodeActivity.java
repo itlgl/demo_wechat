@@ -16,6 +16,7 @@ import com.itlgl.demo.wechat.R;
 import com.itlgl.demo.wechat.bean.RegionCode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -61,9 +62,11 @@ public class SelectRegionCodeActivity extends AppCompatActivity {
 
     private List<RegionCodeDisplay> loadRegionCodeData() {
         List<RegionCodeDisplay> result = new ArrayList<>();
-        List<RegionCode> regionCodeList = new ArrayList<>();
         try {
             String[] regionArray = getResources().getStringArray(R.array.region_array);
+            // 因为将排序的字母放在了首位，所以直接对整个串排序就可以了
+            Arrays.sort(regionArray);
+            char firstLetter = 0;
             for (String regionStr : regionArray) {
                 String[] regionSingleArray = regionStr.split(":");
                 if(regionSingleArray.length < 3) {
@@ -74,20 +77,12 @@ public class SelectRegionCodeActivity extends AppCompatActivity {
                 String name = regionSingleArray[1].trim();
                 String sortName = regionSingleArray[0].trim();
 
-                regionCodeList.add(new RegionCode(name, sortName, code));
-            }
-
-            // 对数据进行排序
-            Collections.sort(regionCodeList);
-
-            char firstLetter = 0;
-            for(RegionCode rc : regionCodeList) {
-                char c = rc.getSortName().charAt(0);
+                char c = sortName.charAt(0);
                 if(firstLetter != c) {
-                    result.add(new RegionCodeDisplay(rc.getName(), rc.getSortName(), rc.getCode(), String.valueOf(c)));
+                    result.add(new RegionCodeDisplay(name, sortName, code, String.valueOf(c)));
                     firstLetter = c;
                 } else {
-                    result.add(new RegionCodeDisplay(rc.getName(), rc.getSortName(), rc.getCode()));
+                    result.add(new RegionCodeDisplay(name, sortName, code));
                 }
             }
         } catch (Exception e) {

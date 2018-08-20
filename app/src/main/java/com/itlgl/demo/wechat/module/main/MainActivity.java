@@ -76,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
 //        menuShowAnimation.setFillAfter(false);
     }
 
+    // 在按返回键以后直接退到后台运行
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
     @SuppressWarnings("unused")
     @OnClick(R.id.menu_more)
     void menuMoreClick(View v) {

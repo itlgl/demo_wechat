@@ -1,7 +1,11 @@
 package com.itlgl.demo.wechat.module.splash;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +18,8 @@ import com.itlgl.demo.wechat.module.register.PhonePwdRegisterActivity;
 import com.itlgl.demo.wechat.utils.BarUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -23,8 +29,12 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import tencent.tls.platform.TLSLoginHelper;
+import tencent.tls.platform.TLSUserInfo;
 
 public class SplashActivity extends RxAppCompatActivity {
+
+    private final int REQUEST_PHONE_PERMISSIONS = 0;
 
     @BindView(R.id.login)
     Button login;
@@ -41,21 +51,60 @@ public class SplashActivity extends RxAppCompatActivity {
 
     private void initView() {
         BarUtils.setNoBar(this);
+        login.setVisibility(View.GONE);
+        register.setVisibility(View.GONE);
 
-        Observable.timer(2000, TimeUnit.MILLISECONDS)
-                .compose(this.<Long>bindToLifecycle())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        finishTask();
-                    }
-                });
+        final List<String> permissionsList = new ArrayList<>();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if ((checkSelfPermission(Manifest.permission.READ_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED)) permissionsList.add(Manifest.permission.READ_PHONE_STATE);
+            if ((checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)) permissionsList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (permissionsList.size() == 0){
+                init();
+            }else{
+                requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+                        REQUEST_PHONE_PERMISSIONS);
+            }
+        } else {
+            init();
+        }
     }
 
-    private void finishTask() {
+    private void init() {
+        TLSUserInfo userInfo = TLSLoginHelper.getInstance().getLastUserInfo();
+        if(userInfo != null && !TextUtils.isEmpty(userInfo.identifier)) {
+            Observable.timer(2000, TimeUnit.MILLISECONDS)
+                    .compose(this.<Long>bindToLifecycle())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Consumer<Long>() {
+                        @Override
+                        public void accept(Long aLong) throws Exception {
+                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    });
+        } else {
+            login.setVisibility(View.VISIBLE);
+            register.setVisibility(View.VISIBLE);
+        }
 
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PHONE_PERMISSIONS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    init();
+                } else {
+                    Toast.makeText(this, getString(R.string.need_permission),Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 
     @SuppressWarnings("unused")

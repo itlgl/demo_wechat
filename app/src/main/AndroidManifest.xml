@@ -81,7 +81,8 @@
         <activity android:name=".module.login.PhonePwdLoginActivity" />
         <activity android:name=".module.register.PhonePwdRegisterActivity" />
         <activity android:name=".module.register.RegisterSmsVerifyActivity" />
-        <activity android:name=".module.common.SelectRegionCodeActivity"></activity>
+        <activity android:name=".module.common.SelectRegionCodeActivity" />
+        <activity android:name=".module.login.VerifyImageCodeActivity"></activity>
     </application>
 
 </manifest>

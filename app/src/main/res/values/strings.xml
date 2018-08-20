@@ -7,6 +7,7 @@
     <string name="home_tab_contacts">通讯录</string>
     <string name="home_tab_discover">发现</string>
     <string name="home_tab_me">我</string>
+    <string name="need_permission">您需要开启权限,并重启应用</string>
 
     <!-- 发现标签页的string -->
     <string name="moments">朋友圈</string>
@@ -309,4 +310,8 @@
     <string name="next_step">下一步</string>
     <string name="login_by_phone">手机号登录</string>
     <string name="select_county_and_region_code">选择国家和地区代码</string>
+    <string name="need_verify_image_code">本次登录需要额外验证</string>
+    <string name="image">图片</string>
+    <string name="image_code">验证码</string>
+    <string name="image_code_hint">请输入图片上的验证码</string>
 </resources>
